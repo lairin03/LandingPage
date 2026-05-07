@@ -84,12 +84,6 @@ function App() {
               <p className="text-sm text-slate-400">Gorras premium de edición limitada</p>
             </div>
           </div>
-          <a
-            href="#shop"
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-medium text-white transition hover:border-cyan-300/40 hover:bg-white/15"
-          >
-            Comprar ahora
-          </a>
         </header>
 
         <main className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
@@ -210,12 +204,6 @@ function App() {
                   Empaque premium y regalo listo para usar.
                 </li>
               </ul>
-              <a
-                href="mailto:ventas@auracaps.com?subject=Quiero%20comprar%20AURA%20Cap"
-                className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-ink transition hover:bg-cyan-300"
-              >
-                Comprar AURA Cap
-              </a>
             </div>
           </div>
         </section>
@@ -264,12 +252,6 @@ function App() {
                 <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Soporte directo</p>
                 <p className="mt-3 text-xl font-semibold text-white">Chat y correo</p>
               </div>
-              <a
-                href="mailto:ventas@auracaps.com?subject=Comprar%20AURA%20Cap"
-                className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-ink transition hover:bg-cyan-300"
-              >
-                Quiero la mía
-              </a>
             </div>
           </div>
         </section>
