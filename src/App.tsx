@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import FeatureCard from './components/FeatureCard';
 import TestimonialCard from './components/TestimonialCard';
-import StatBlock from './components/StatBlock';
 
 const features = [
   {
@@ -36,12 +35,6 @@ const testimonials = [
     name: 'Luis Álvarez',
     role: 'Emprendedor digital',
   },
-];
-
-const stats = [
-  { value: '500+', label: 'Unidades vendidas' },
-  { value: '4.9/5', label: 'Calificación promedio' },
-  { value: '24h', label: 'Despacho express' },
 ];
 
 function App() {
@@ -106,27 +99,6 @@ function App() {
                 AURA Cap combina materiales técnicos, fit perfecto y una estética minimalista para que marques presencia hoy, mañana y siempre.
               </p>
             </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href="#shop"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full bg-cyan-400 px-7 py-4 text-base font-semibold text-ink shadow-glow transition duration-300 hover:-translate-y-0.5 hover:bg-cyan-300"
-              >
-                Comprar ahora
-              </a>
-              <a
-                href="#features"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base text-white transition hover:border-cyan-300/40 hover:bg-white/10"
-              >
-                Ver detalles
-              </a>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <StatBlock key={stat.label} value={stat.value} label={stat.label} />
-              ))}
-            </div>
           </motion.section>
 
           <motion.div
@@ -166,48 +138,6 @@ function App() {
           </div>
         </section>
 
-        <section id="shop" className="mt-24 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur-xl lg:p-12">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="space-y-5">
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Compra ahora</p>
-              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                AURA Cap: gorra premium con presencia inmediata.
-              </h2>
-              <p className="max-w-xl text-lg leading-8 text-slate-300">
-                Producto diseñado para destacar. Un solo modelo, una experiencia de compra sencilla y un resultado de estilo que no pasa desapercibido.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-3">
-                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=300&h=200&fit=crop&crop=center" alt="Vista frontal AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
-                <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=300&h=200&fit=crop&crop=center" alt="Vista lateral AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
-                <img src="https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?w=300&h=200&fit=crop&crop=center" alt="Vista trasera AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
-              </div>
-            </div>
-            <div className="rounded-[2rem] bg-[#06101d] p-8 shadow-soft">
-              <div className="flex items-center justify-between text-slate-300">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Precio</p>
-                  <p className="mt-3 text-4xl font-semibold text-white">$79</p>
-                </div>
-                <span className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">Envío express</span>
-              </div>
-              <ul className="mt-8 space-y-4 text-slate-300">
-                <li className="flex items-start gap-3 text-base">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
-                  Envío en 24-48h.
-                </li>
-                <li className="flex items-start gap-3 text-base">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
-                  Pago seguro y seguimiento inmediato.
-                </li>
-                <li className="flex items-start gap-3 text-base">
-                  <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400" />
-                  Empaque premium y regalo listo para usar.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section className="mt-24 grid gap-8 lg:grid-cols-2">
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur-xl">
             <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Opiniones</p>
@@ -227,30 +157,6 @@ function App() {
               <div className="rounded-[1.75rem] bg-[#071028] p-6 text-slate-300 shadow-sm">
                 <p className="text-3xl font-semibold text-white">Stock limitado</p>
                 <p className="mt-3 text-sm uppercase tracking-[0.24em] text-slate-400">Diseño exclusivo, demanda alta</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="cta" className="mt-24 rounded-[2.5rem] border border-cyan-300/15 bg-gradient-to-br from-[#05101f] via-[#050714] to-[#080d1f] px-8 py-12 shadow-glow sm:px-12">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Compra con urgencia</p>
-              <h2 className="mt-4 text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-                AURA Cap se agota rápido. Consigue la tuya antes de que cierre la colección.
-              </h2>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                Producto limitado, envío express y diseño premium para quien necesita estilo inmediato.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="rounded-[1.75rem] bg-[#071228] p-6 text-slate-300 shadow-sm">
-                <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Entrega garantizada</p>
-                <p className="mt-3 text-xl font-semibold text-white">24-48h</p>
-              </div>
-              <div className="rounded-[1.75rem] bg-[#071228] p-6 text-slate-300 shadow-sm">
-                <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Soporte directo</p>
-                <p className="mt-3 text-xl font-semibold text-white">Chat y correo</p>
               </div>
             </div>
           </div>
