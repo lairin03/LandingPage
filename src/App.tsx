@@ -9,16 +9,19 @@ const features = [
     title: 'Diseño urbano premium',
     description: 'Una gorra minimalista con acabado mate, costuras invisibles y una silueta que se mantiene impecable todo el día.',
     accent: 'Estilo icónico',
+    image: 'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=400&h=300&fit=crop&crop=center',
   },
   {
     title: 'Tecnología de confort',
     description: 'Tejido ligero, transpirable y ajustable que ofrece un fit perfecto sin perder forma.',
     accent: 'Ajuste superior',
+    image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=300&fit=crop&crop=center',
   },
   {
     title: 'Edición limitada',
     description: 'Colección exclusiva + envíos rápidos para quienes quieren un look premium sin esperar.',
     accent: 'Stock reducido',
+    image: 'https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?w=400&h=300&fit=crop&crop=center',
   },
 ];
 
@@ -138,51 +141,35 @@ function App() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
             className="relative mx-auto w-full max-w-xl"
           >
-            <div className="glass-panel relative overflow-hidden rounded-[2.5rem] border border-white/10 p-6 shadow-soft">
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-400/20 via-transparent to-transparent" />
-              <div className="flex items-center justify-between text-sm text-cyan-100">
-                <span className="rounded-full bg-white/5 px-3 py-1">Gorra urbana</span>
-                <span className="rounded-full bg-white/5 px-3 py-1">Edición limitada</span>
-              </div>
-
-              <div className="mt-10 space-y-6">
-                <div className="rounded-[2rem] bg-[#070a17] p-6 shadow-glow">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Colección</p>
-                      <p className="mt-3 text-2xl font-semibold text-white">AURA Noir</p>
-                    </div>
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-400/15 text-cyan-300">
-                      #{' '}
-                    </div>
-                  </div>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[1.75rem] bg-[#071122] p-5">
-                    <p className="text-sm text-slate-400">Material</p>
-                    <p className="mt-3 text-3xl font-semibold text-white">Ultra tejido</p>
-                  </div>
-                  <div className="rounded-[1.75rem] bg-[#071122] p-5">
-                    <p className="text-sm text-slate-400">Ajuste</p>
-                    <p className="mt-3 text-3xl font-semibold text-white">Un tamaño</p>
-                  </div>
-                </div>
-                <div className="rounded-[1.75rem] bg-[#070a17] p-5 text-slate-300">
-                  <p className="text-sm uppercase tracking-[0.24em] text-cyan-200/80">Envío</p>
-                  <p className="mt-3 text-lg leading-7">
-                    Envío express disponible. Compra hoy y recibe tu gorra premium en 24-48h con empaque exclusivo.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&h=500&fit=crop&crop=center"
+              alt="AURA Cap Noir - Gorra premium edición limitada"
+              className="w-full h-96 object-cover rounded-[2.5rem] shadow-soft"
+            />
             <div className="pointer-events-none absolute -right-12 top-12 h-44 w-44 rounded-full bg-cyan-400/10 blur-3xl" />
           </motion.div>
         </main>
 
         <section id="features" className="mt-24 grid gap-10 lg:grid-cols-3">
           {features.map((feature) => (
-            <FeatureCard key={feature.title} title={feature.title} description={feature.description} accent={feature.accent} />
+            <FeatureCard key={feature.title} title={feature.title} description={feature.description} accent={feature.accent} image={feature.image} />
           ))}
+        </section>
+
+        <section className="mt-24 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur-xl lg:p-12">
+          <div className="text-center space-y-4">
+            <p className="text-sm uppercase tracking-[0.28em] text-cyan-300/80">Cómo se ve</p>
+            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Estilo que habla por ti.
+            </h2>
+            <p className="max-w-2xl mx-auto text-lg leading-8 text-slate-300">
+              Mira cómo AURA Cap transforma tu look urbano en algo premium y memorable.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop&crop=center" alt="Modelo usando AURA Cap en estilo urbano" className="w-full h-80 object-cover rounded-[2rem]" />
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=400&fit=crop&crop=center" alt="Vista detallada de AURA Cap" className="w-full h-80 object-cover rounded-[2rem]" />
+          </div>
         </section>
 
         <section id="shop" className="mt-24 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-soft backdrop-blur-xl lg:p-12">
@@ -195,6 +182,11 @@ function App() {
               <p className="max-w-xl text-lg leading-8 text-slate-300">
                 Producto diseñado para destacar. Un solo modelo, una experiencia de compra sencilla y un resultado de estilo que no pasa desapercibido.
               </p>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=300&h=200&fit=crop&crop=center" alt="Vista frontal AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
+                <img src="https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=300&h=200&fit=crop&crop=center" alt="Vista lateral AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
+                <img src="https://images.unsplash.com/photo-1523380744952-b7e00e6e2ffa?w=300&h=200&fit=crop&crop=center" alt="Vista trasera AURA Cap" className="rounded-[1rem] object-cover w-full h-32" />
+              </div>
             </div>
             <div className="rounded-[2rem] bg-[#06101d] p-8 shadow-soft">
               <div className="flex items-center justify-between text-slate-300">
